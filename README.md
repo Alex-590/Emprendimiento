@@ -2,5 +2,5 @@
 proyecto-2026
 
 RECURSOS:
-Vitest
+Vitest,
 Testing Library
