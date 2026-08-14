@@ -1,0 +1,10 @@
+/* Esto es para estilos globales como la tipografia de todo el documento*/
+
+body {
+  font-family: "Segoe UI";
+}
+
+.app {
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
