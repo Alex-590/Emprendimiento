@@ -1,7 +1,9 @@
 /* Esto es para estilos globales como la tipografia de todo el documento*/
 
-body {
-  font-family: "Segoe UI";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
+
+body{
+   font-family: 'Poppins', 'Inter', system-ui, sans-serif;
 }
 
 .app {

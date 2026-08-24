@@ -6,11 +6,10 @@
 */
 
 /* Fuentes Poppins e Inter desde Google Fonts. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
+
 
 /* Contenedor principal de la tarjeta. */
 .val-card {
-  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
   color: #1b2436;
   background: #fff;
   border: 1px solid #e8eaef;
