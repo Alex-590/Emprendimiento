@@ -1,0 +1,70 @@
+/*
+  Estilos del dashboard general del proyecto.
+
+  Todas las clases llevan el prefijo "dash-" para no chocar
+  con los estilos de otros componentes.
+*/
+
+/* Fuentes Poppins e Inter desde Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
+
+/* Contenedor principal de la tarjeta. */
+.dash-card {
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  color: #1b2436;
+  background: #fff;
+  border: 1px solid #e8eaef;
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 24px;
+  box-sizing: border-box;
+}
+/* El padding y el borde se cuentan dentro del tamaño de cada elemento. */
+.dash-card *, .dash-card *::before, .dash-card *::after { box-sizing: border-box; }
+
+/* Encabezado: título a la izquierda y métricas a la derecha.
+   El flex-wrap las manda abajo cuando no caben en la misma fila. */
+.dash-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.dash-titlegroup { display: flex; align-items: center; gap: 12px; }
+.dash-icon-box { width: 42px; height: 42px; border-radius: 12px; background: #eef2fb; color: #0033a0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.dash-title { margin: 0; font-size: 19px; font-weight: 700; }
+.dash-sub { margin: 2px 0 0; font-size: 13px; color: #6b7280; }
+
+/* Métricas generales del equipo. */
+.dash-metrics { display: flex; gap: 32px; }
+.dash-metric { text-align: right; }
+.dash-metric-label { margin: 0; font-size: 11px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+.dash-metric-val { margin: 2px 0 0; font-size: 26px; font-weight: 800; }
+/* Colores que se le pasan a cada métrica desde el componente. */
+.dash-c-blue { color: #0033a0; }
+.dash-c-green { color: #15803d; }
+.dash-c-orange { color: #ea580c; }
+
+/* Tarjetas de los becarios, acomodadas en dos columnas. */
+.dash-grid { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.dash-item { border: 1px solid #e8eaef; border-radius: 16px; padding: 20px; }
+/* Datos del alumno a la izquierda y la flecha a la derecha. */
+.dash-becario-head { display: flex; align-items: center; justify-content: space-between; }
+.dash-alumno { display: flex; align-items: center; gap: 12px; }
+.dash-avatar { width: 40px; height: 40px; border-radius: 999px; background: #eef2fb; color: #0033a0; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.dash-alumno-name { font-weight: 600; font-size: 15px; }
+.dash-alumno-mat { font-size: 12px; color: #6b7280; }
+.dash-chevron { color: #9ca3af; display: flex; }
+
+/* Barra de avance. El overflow recorta el relleno para que respete las esquinas redondeadas. */
+.dash-progress { margin-top: 16px; height: 8px; width: 100%; border-radius: 999px; background: #eef0f4; overflow: hidden; }
+/* El ancho del relleno se define desde el componente con el porcentaje del becario. */
+.dash-progress-fill { height: 100%; border-radius: 999px; background: #0033a0; }
+
+/* Pie de la tarjeta: horas hechas, pendientes y porcentaje. */
+.dash-foot { margin-top: 8px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; }
+.dash-done { font-weight: 700; }
+.dash-meta-h { color: #6b7280; font-weight: 400; }
+.dash-pend { color: #ea580c; font-weight: 500; }
+.dash-pct { color: #0033a0; font-weight: 700; }
+
+/* En pantallas chicas las tarjetas pasan a una sola columna. */
+@media (max-width: 720px) {
+  .dash-grid { grid-template-columns: 1fr; }
+  .dash-metrics { gap: 20px; }
+}

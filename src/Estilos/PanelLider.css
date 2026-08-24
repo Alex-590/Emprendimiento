@@ -1,0 +1,38 @@
+/*
+  Estilos del layout de la vista de Líder de Proyecto.
+
+  Aquí solo van el contenedor de la página, el encabezado
+  y la cuadrícula. Cada componente trae su propio CSS.
+*/
+
+/* Fuentes Poppins e Inter desde Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
+
+/* Contenedor de toda la vista. El max-width y el margin auto
+   lo mantienen centrado en pantallas grandes. */
+.panel-main {
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  color: #1b2436;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+/* El padding y el borde se cuentan dentro del tamaño de cada elemento. */
+.panel-main *, .panel-main *::before, .panel-main *::after { box-sizing: border-box; }
+
+/* Encabezado de la vista: etiqueta, título y descripción. */
+.panel-eyebrow { margin: 0; color: #0033a0; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.panel-h1 { margin: 6px 0 12px; font-size: 40px; line-height: 1.1; font-weight: 800; }
+/* El max-width corta la línea antes para que el párrafo se lea mejor. */
+.panel-lead { margin: 0; color: #6b7280; font-size: 16px; max-width: 620px; }
+
+/* Cuadrícula de las dos tarjetas: validación de horas ocupa el doble
+   de ancho que disponibilidad. El align-items start evita que la más
+   corta se estire hasta la altura de la otra. */
+.panel-grid { margin-top: 32px; display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start; }
+
+/* En pantallas medianas las tarjetas se acomodan una debajo de otra
+   y en las chicas se reduce el tamaño del título. */
+@media (max-width: 1000px) { .panel-grid { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .panel-h1 { font-size: 32px; } }
