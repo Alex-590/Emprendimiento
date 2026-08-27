@@ -13,7 +13,7 @@ class Credentials:
 
 class DBHandler:
     __connection: MySQLConnectionAbstract | PooledMySQLConnection | None
-    def __init__(self, creds: Credentials):
+    def __init__(self, creds: Credentials) -> None:
         self.__connection = None
         try:
             self.__connection = mysql.connector.connect(
@@ -24,7 +24,12 @@ class DBHandler:
             )
         except Error as e:
             print(f"Error while establishing connection with MySQL service: {e}")
+            raise
 
-    def __del__(self):
+    @property
+    def is_connected(self) -> bool:
+        return self.__connection.is_connected
+
+    def __del__(self) -> None:
         if self.__connection and self.__connection.is_connected():
             self.__connection.close()
